@@ -1,0 +1,10 @@
+services:
+  agents-test:
+    build: .
+    env_file: .env
+    volumes:
+      - ./scripts:/app/scripts
+      - ./output:/app/output
+    working_dir: /app
+    # 默认跑基础 Agent 测试，可通过 command 切换
+    command: python scripts/test_basic_agent.py

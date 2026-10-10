@@ -1,0 +1,6 @@
+# 密钥：绝不提交，含真实硅基流动 key
+.env
+
+# Python 缓存
+__pycache__/
+*.pyc

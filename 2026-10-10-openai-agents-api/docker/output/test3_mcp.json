@@ -1,0 +1,7 @@
+{
+  "model": "deepseek-ai/DeepSeek-V3",
+  "question": "用 echo 工具说一句 'Hello from MCP'",
+  "answer": "Hello from MCP",
+  "elapsed": 3.283127546310425,
+  "success": true
+}

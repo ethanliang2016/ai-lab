@@ -1,0 +1,20 @@
+{
+  "model": "deepseek-ai/DeepSeek-V3",
+  "base_url": "https://api.siliconflow.cn/v1",
+  "results": [
+    {
+      "question": "北京今天天气怎么样？",
+      "answer": "北京今天天气晴朗，气温为22°C，有微风，适合出门活动。",
+      "elapsed": 11.365387916564941,
+      "success": true
+    },
+    {
+      "question": "上海和深圳哪边更热？",
+      "answer": "目前深圳比上海更热：\n\n- 上海：多云，气温25°C，东南风3级。\n- 深圳：雷阵雨，气温28°C，湿度较高。  \n\n深圳的气温更高一些。",
+      "elapsed": 4.9793689250946045,
+      "success": true
+    }
+  ],
+  "success_count": 2,
+  "total_count": 2
+}
