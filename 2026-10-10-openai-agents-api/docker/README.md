@@ -1,5 +1,7 @@
 # OpenAI Agents SDK 实测（0.23.1）· 硅基流动DeepSeek-V3
 
+> 本篇工程位于统一仓库 [ai-lab](https://github.com/ethanliang/ai-lab) 的 `2026-10-10-openai-agents-api/docker/` 子目录，对应 tag `2026-10-10-openai-agents-api`。
+
 配套《OpenAI 把 Agent 基建做成了 API：MCP 正式入编》一文的最小可复现工程。在 Docker 中跑通 openai-agents 0.23.1 的三组测试：基础 Agent+工具调用、多 Agent Handoffs、本地 MCP Server 接入。
 
 ## 环境
@@ -12,8 +14,8 @@
 ## 快速开始
 
 ```bash
-git clone <本仓库>
-cd <仓库目录>
+git clone https://github.com/ethanliang/ai-lab.git
+cd ai-lab/2026-10-10-openai-agents-api/docker
 cp .env.example .env            # 填入你自己的硅基流动 key
 docker compose run --rm agents-test python scripts/test_basic_agent.py
 docker compose run --rm agents-test python scripts/test_handoffs.py
