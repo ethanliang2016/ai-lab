@@ -1,0 +1,18 @@
+{
+  "created_by": "manual_a_share_scan",
+  "symbol": "688836",
+  "side": "buy",
+  "date": "2026-10-23",
+  "setup": "intraday_reversal_after_3day_pullback",
+  "entry": 530.10,
+  "entry_time": "09:45",
+  "interval": "5m",
+  "stop": 477.64,
+  "stop_rule": "2x_daily_atr_below_entry",
+  "target": 582.56,
+  "target_r": 1.0,
+  "risk_per_share": 52.46,
+  "reward_risk": 1.0,
+  "flat_by": "14:50",
+  "notes": "宇树科技 688836 | 2026-10-23 真实行情(东方财富实拉) | 10-19+16.15%/10-20+6.07% 连涨后回调3天,今日+1.94%反弹 | 20日均振幅 26.23,20日均线 469.79"
+}

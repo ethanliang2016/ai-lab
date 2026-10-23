@@ -1,0 +1,31 @@
+{
+  "created_by": "manual_a_share_scan",
+  "created_at": "2026-10-23T02:50:00Z",
+  "status": "proposed",
+  "paper": true,
+  "note": "A-share real market analysis: 宇树科技 688836, data from 东方财富 2026-10-23",
+  "source": "trader/plan-688836.json (688836 intraday reversal)",
+  "orders": [
+    {
+      "symbol": "688836",
+      "side": "buy",
+      "qty": "100",
+      "type": "market",
+      "time_in_force": "day",
+      "order_class": "bracket",
+      "take_profit_limit_price": "582.56",
+      "stop_loss_stop_price": "477.64",
+      "why": "intraday reversal on 宇树科技 688836: 100 shares, 3-day pullback bounce, risk 52.46/share",
+      "plan": {
+        "entry": 530.10,
+        "stop": 477.64,
+        "target": 582.56,
+        "risk_per_share": 52.46,
+        "max_loss": 5246.00,
+        "setup": "intraday_reversal_after_3day_pullback",
+        "entry_time": "09:45",
+        "flat_by": "14:50"
+      }
+    }
+  ]
+}

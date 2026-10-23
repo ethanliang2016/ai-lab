@@ -1,0 +1,12 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api.siliconflow.cn",
+    "ANTHROPIC_AUTH_TOKEN": "sk-YOUR_SILICONFLOW_KEY_HERE",
+    "ANTHROPIC_MODEL": "deepseek-ai/DeepSeek-V4-Flash",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-ai/DeepSeek-V4-Pro",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-ai/DeepSeek-V4-Flash",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-ai/DeepSeek-V4-Flash",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "deepseek-ai/DeepSeek-V4-Flash"
+  },
+  "_note": "2026-10-23 实测通过。关键:必须用 ANTHROPIC_AUTH_TOKEN(发 Authorization: Bearer),不能用 ANTHROPIC_API_KEY(发 x-api-key 且对 key 格式做 Anthropic 校验)。BASE_URL 不带 /v1,Claude Code 会自动追加。"
+}
