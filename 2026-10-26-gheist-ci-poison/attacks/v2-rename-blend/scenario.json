@@ -1,0 +1,9 @@
+{
+  "id": "V2",
+  "name": "改名混入",
+  "branch": "ci/minor-tweak",
+  "commit_message": "ci: adjust pipeline names",
+  "changes": [
+    {"path": ".github/workflows/ci.yml", "action": "add", "file": "ci.yml"}
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "BASE": {
+    "name": "基准仓库（未投毒阴性对照）",
+    "results": {
+      "M2-actionlint": false,
+      "M3-zizmor": true,
+      "M4-ioc": false,
+      "M5-generic": false
+    }
+  },
+  "V1": {
+    "name": "Gheist 原版复刻",
+    "results": {
+      "M2-actionlint": false,
+      "M3-zizmor": false,
+      "M4-ioc": true,
+      "M5-generic": true
+    }
+  },
+  "V2": {
+    "name": "改名混入",
+    "results": {
+      "M2-actionlint": false,
+      "M3-zizmor": true,
+      "M4-ioc": false,
+      "M5-generic": true
+    }
+  },
+  "V3": {
+    "name": "寄生正常 CI",
+    "results": {
+      "M2-actionlint": false,
+      "M3-zizmor": true,
+      "M4-ioc": false,
+      "M5-generic": true
+    }
+  },
+  "V4": {
+    "name": "typosquat action 单行改动",
+    "results": {
+      "M2-actionlint": false,
+      "M3-zizmor": true,
+      "M4-ioc": false,
+      "M5-generic": true
+    }
+  },
+  "V5": {
+    "name": "base64 藏外联地址",
+    "results": {
+      "M2-actionlint": false,
+      "M3-zizmor": true,
+      "M4-ioc": false,
+      "M5-generic": true
+    }
+  },
+  "V6": {
+    "name": "pull_request_target 滥用",
+    "results": {
+      "M2-actionlint": false,
+      "M3-zizmor": true,
+      "M4-ioc": false,
+      "M5-generic": true
+    }
+  },
+  "V7": {
+    "name": "environment matrix 偷环境密钥（Tool B）",
+    "results": {
+      "M2-actionlint": false,
+      "M3-zizmor": false,
+      "M4-ioc": true,
+      "M5-generic": true
+    }
+  },
+  "V8": {
+    "name": "artifact 外泄",
+    "results": {
+      "M2-actionlint": false,
+      "M3-zizmor": true,
+      "M4-ioc": false,
+      "M5-generic": true
+    }
+  }
+}

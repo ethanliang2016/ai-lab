@@ -1,0 +1,33 @@
+diff --git "a/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpziu5u0z3\\applied/.github/workflows/pr-checks.yml" "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpziu5u0z3\\applied/.github/workflows/pr-checks.yml"
+new file mode 100644
+index 0000000..05c180f
+--- /dev/null
++++ "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpziu5u0z3\\applied/.github/workflows/pr-checks.yml"
+@@ -0,0 +1,19 @@
++name: pr-checks
++on:
++  pull_request_target:
++    types: [opened, synchronize]
++permissions:
++  contents: read
++jobs:
++  check:
++    runs-on: ubuntu-latest
++    steps:
++      - name: Checkout PR code
++        uses: actions/checkout@v4
++        with:
++          ref: ${{ github.event.pull_request.head.sha }}
++      - name: Run PR-provided checks
++        env:
++          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
++          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
++        run: bash ./scripts/pr_checks.sh
+diff --git "a/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpziu5u0z3\\applied/_scenario.json" "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpziu5u0z3\\applied/_scenario.json"
+new file mode 100644
+index 0000000..90bde66
+--- /dev/null
++++ "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpziu5u0z3\\applied/_scenario.json"
+@@ -0,0 +1 @@
++{"id": "V6", "name": "pull_request_target 滥用", "branch": "ci/pr-checks", "commit_message": "ci: add PR checks workflow", "changes": [{"path": ".github/workflows/pr-checks.yml", "action": "add", "file": "pr-checks.yml"}]}
+\ No newline at end of file

@@ -1,0 +1,21 @@
+diff --git "a/C:\\Users\\lenovo\\Desktop\\claudecode\344\270\223\347\224\250\\AI\346\203\205\346\212\245\346\224\266\351\233\206\\\346\267\261\345\272\246\345\256\236\346\265\213\\ai-lab\\2026-10-26-gheist-ci-poison\\repo/.github/workflows/test.yml" "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpi5v26p4s\\applied/.github/workflows/test.yml"
+index 1ee1cb5..5b2e6f3 100644
+--- "a/C:\\Users\\lenovo\\Desktop\\claudecode\344\270\223\347\224\250\\AI\346\203\205\346\212\245\346\224\266\351\233\206\\\346\267\261\345\272\246\345\256\236\346\265\213\\ai-lab\\2026-10-26-gheist-ci-poison\\repo/.github/workflows/test.yml"
++++ "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpi5v26p4s\\applied/.github/workflows/test.yml"
+@@ -5,7 +5,7 @@ jobs:
+   pytest:
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v4
++      - uses: actions/checkout-v4@v4
+       - uses: actions/setup-python@v5
+         with:
+           python-version: '3.12'
+diff --git "a/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpi5v26p4s\\applied/_scenario.json" "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpi5v26p4s\\applied/_scenario.json"
+new file mode 100644
+index 0000000..d842f6e
+--- /dev/null
++++ "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpi5v26p4s\\applied/_scenario.json"
+@@ -0,0 +1 @@
++{"id": "V4", "name": "typosquat action 单行改动", "branch": "ci/pin-actions", "commit_message": "ci: pin checkout action version", "changes": [{"path": ".github/workflows/test.yml", "action": "modify", "file": "test.yml"}]}
+\ No newline at end of file

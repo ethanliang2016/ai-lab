@@ -1,0 +1,72 @@
+[
+ {
+  "label": "ChatGPT",
+  "referrer": "https://chatgpt.com/share/abc",
+  "url": "/landing/ai-campaign"
+ },
+ {
+  "label": "ChatGPT旧域",
+  "referrer": "https://chat.openai.com/",
+  "url": "/blog/ai-search-trends"
+ },
+ {
+  "label": "Perplexity",
+  "referrer": "https://perplexity.ai/search?q=x",
+  "url": "/blog/case-study-1"
+ },
+ {
+  "label": "Claude",
+  "referrer": "https://claude.ai/chat/xyz",
+  "url": "/landing/ai-campaign"
+ },
+ {
+  "label": "Gemini",
+  "referrer": "https://gemini.google.com/app/123",
+  "url": "/blog/crawler-101"
+ },
+ {
+  "label": "Copilot",
+  "referrer": "https://copilot.microsoft.com/chats/1",
+  "url": "/blog/case-study-1"
+ },
+ {
+  "label": "豆包",
+  "referrer": "https://doubao.com/chat/2",
+  "url": "/"
+ },
+ {
+  "label": "Kimi",
+  "referrer": "https://kimi.com/chat/3",
+  "url": "/pricing"
+ },
+ {
+  "label": "DeepSeek",
+  "referrer": "https://chat.deepseek.com/",
+  "url": "/pricing"
+ },
+ {
+  "label": "文心一言",
+  "referrer": "https://yiyan.baidu.com/",
+  "url": "/landing/ai-campaign"
+ },
+ {
+  "label": "对照-传统",
+  "referrer": "https://www.google.com/search?q=x",
+  "url": "/docs/quickstart"
+ },
+ {
+  "label": "对照-传统",
+  "referrer": "https://www.baidu.com/s?wd=x",
+  "url": "/blog/case-study-1"
+ },
+ {
+  "label": "对照-未识别",
+  "referrer": "https://t.co/abc",
+  "url": "/"
+ },
+ {
+  "label": "对照-未识别",
+  "referrer": "https://example.org/",
+  "url": "/blog/geo-guide"
+ }
+]

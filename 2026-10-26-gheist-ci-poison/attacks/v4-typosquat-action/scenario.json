@@ -1,0 +1,9 @@
+{
+  "id": "V4",
+  "name": "typosquat action 单行改动",
+  "branch": "ci/pin-actions",
+  "commit_message": "ci: pin checkout action version",
+  "changes": [
+    {"path": ".github/workflows/test.yml", "action": "modify", "file": "test.yml"}
+  ]
+}

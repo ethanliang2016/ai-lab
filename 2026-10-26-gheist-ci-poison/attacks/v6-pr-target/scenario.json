@@ -1,0 +1,9 @@
+{
+  "id": "V6",
+  "name": "pull_request_target 滥用",
+  "branch": "ci/pr-checks",
+  "commit_message": "ci: add PR checks workflow",
+  "changes": [
+    {"path": ".github/workflows/pr-checks.yml", "action": "add", "file": "pr-checks.yml"}
+  ]
+}

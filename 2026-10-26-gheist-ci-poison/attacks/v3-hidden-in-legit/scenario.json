@@ -1,0 +1,9 @@
+{
+  "id": "V3",
+  "name": "寄生正常 CI",
+  "branch": "fix/test-cache",
+  "commit_message": "test: warm dependency cache to speed up CI",
+  "changes": [
+    {"path": ".github/workflows/test.yml", "action": "modify", "file": "test.yml"}
+  ]
+}

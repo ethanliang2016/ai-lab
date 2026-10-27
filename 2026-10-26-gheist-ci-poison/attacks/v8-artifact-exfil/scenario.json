@@ -1,0 +1,9 @@
+{
+  "id": "V8",
+  "name": "artifact 外泄",
+  "branch": "test/diagnostics",
+  "commit_message": "test: upload diagnostics on failure",
+  "changes": [
+    {"path": ".github/workflows/report.yml", "action": "add", "file": "report.yml"}
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "detector": "M2-actionlint",
+    "detected": false,
+    "raw": ""
+  },
+  {
+    "detector": "M3-zizmor",
+    "detected": false,
+    "idents": [
+      "overprovisioned-secrets(Medium)"
+    ],
+    "raw": "[\n  {\n    \"ident\": \"overprovisioned-secrets\",\n    \"desc\": \"excessively provisioned secrets\",\n    \"url\": \"https://docs.zizmor.sh/audits/#overprovisioned-secrets\",\n    \"determinations\": {\n      \"confidence\": \"High\",\n      \"severity\": \"Medium\",\n      \"persona\": \"Regular\"\n    },\n    \"locations\": [\n      {\n        \"symbolic\": {\n          \"key\": {\n            \"Local\": {\n              \"verbatim_path\": \"C:\\\\Users\\\\lenovo\\\\AppData\\\\Local\\\\Temp\\\\tmpqscoemi5\\\\applied\\\\.github\\\\workflows\\\\sync-check.yml\"\n            }\n          },\n          \"annotation\": \"injects the entire secrets context into the runner\",\n          \"route\": {\n            \"route\": []\n          },\n          \"feature_kind\": \"Normal\",\n          \"kind\": \"Primary\"\n        },\n        \"concrete\": {\n          \"location\": {\n            \"start_point\": {\n              \"row\": 16,\n              \"column\": 19\n            },\n            \"end_point\": {\n              \"row\": 16,\n              \"column\": 41\n            },\n            \"offset_span\": {\n              \"start\": 344,\n              \"end\": 366\n            }\n          },\n          \"feature\": \"${{ toJSON(secrets) }}\",\n          \"comments\": []\n        }\n      }\n    ],\n    \"ignored\": false,\n    \"fixes\": []\n  }\n]\u001b[32m INFO\u001b[0m \u001b[2mzizmor\u001b[0m\u001b[2m:\u001b[0m 🌈 zizmor v1.31.1\n\u001b[32m INFO\u001b[0m \u001b[1maudit\u001b[0m\u001b[2m:\u001b[0m \u001b[2mzizmor\u001b[0m\u001b[2m:\u001b[0m 🌈 completed C:\\Users\\lenovo\\AppData\\Local\\Temp\\tmpqscoemi5\\applied\\.github\\workflows\\sync-check.yml"
+  },
+  {
+    "detector": "M4-ioc",
+    "detected": true,
+    "hits": [
+      "branch name matches ^ci-sync-[0-9a-z]{6}$: ci-sync-b2xk4m",
+      "commit message is exactly 'ci: sync config'",
+      "only change is new file at .github/workflows/sync-check.yml",
+      "content marker 'toJSON(secrets) }}' | base32 -w 120' in .github/workflows/sync-check.yml"
+    ]
+  },
+  {
+    "detector": "M5-generic",
+    "detected": true,
+    "hits": [
+      ".github/workflows/sync-check.yml: R1 run块#1: secrets context 展开进 shell",
+      ".github/workflows/sync-check.yml: R2 run块#1: 编码命令与 env/secrets 同块出现",
+      ".github/workflows/sync-check.yml: R4: environment 取自 matrix，环境级密钥批量展开"
+    ]
+  }
+]
