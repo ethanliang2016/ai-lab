@@ -1,0 +1,1 @@
+[{"mandate_id": "root-1", "actor": "router", "allowed_paths": ["README.md", "docs/guide.md"], "allowed_tools": ["execute_sql", "read_file", "write_file"], "strength": "auto_low_risk", "rule_version": "v1.0", "issued_at": 1793944722.5926676, "parent_id": null, "revoked": false, "sig": "71129d2815c280cb9694b54f9f64970b0620af9cea32d96c263a391e513e2fc0"}]
