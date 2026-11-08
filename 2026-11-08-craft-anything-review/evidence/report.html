@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investigation report</title>
+<style>
+:root { --accent: #c96f2d; --fg: #1d1a16; --muted: #6b6257; --bg: #fbf9f6; --line: #e7e0d6; --card: #ffffff; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+main { max-width: 820px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 1.9rem; margin: 0 0 1rem; border-bottom: 3px solid var(--accent); padding-bottom: .4rem; }
+h2 { font-size: 1.3rem; margin: 2rem 0 .6rem; color: var(--accent); }
+h3 { font-size: 1.05rem; margin: 0 0 .5rem; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85em; background: #00000010; padding: 1px 4px; border-radius: 4px; }
+.brief { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 6px; padding: 12px 16px; }
+.brief p { margin: .3rem 0; }
+.finding { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; margin: 0 0 14px; }
+.conf { color: #fff; font-size: .72rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; vertical-align: middle; margin-left: .4rem; white-space: nowrap; }
+ul.evidence { margin: .4rem 0 0; }
+.muted { color: var(--muted); }
+.warn { background: #fdf0e6; border: 1px solid var(--accent); border-radius: 6px; padding: 10px 14px; }
+.warn-inline { color: var(--accent); font-size: .8rem; font-weight: 600; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+@media (prefers-color-scheme: dark) { :root { --fg: #ece6dd; --muted: #a79d8e; --bg: #16130f; --line: #322c24; --card: #1f1a15; } code { background: #ffffff18; } .warn { background: #2a1d12; } }
+
+</style>
+</head>
+<body>
+<main>
+<h1>Investigation report</h1>
+<p class="muted">No brief was recorded for this investigation.</p>
+<h2>What we looked at</h2>
+<ul>
+<li>notepad.exe (pe)</li>
+</ul>
+<h2>What we found</h2>
+<p class="muted">No findings have been recorded yet.</p>
+<h2>Open questions</h2>
+<p class="muted">None outstanding.</p>
+<h2>How this was done</h2>
+<ul>
+<li><strong>Mode:</strong> Clean room (nothing inside the original was read)</li>
+<li><strong>Engines:</strong> builtin</li>
+</ul>
+<h3>Limitations</h3>
+<ul>
+<li>toolchain and packer hints come from markers that can be faked or borrowed</li>
+</ul>
+<h2>Evidence ledger</h2>
+<table>
+<thead><tr><th>Id</th><th>Operation</th><th>Summary</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td><code>ev_a81656de46ed503026a070100ae81dfffc8fff6868e0643d411004de51f1d3c8</code></td><td>core_target_triage</td><td>notepad.exe is a program for Windows, built for x86_64 (64-bit). Its internal names were removed (stripped), so most functions will have generated names.</td><td><span class="conf" style="background:#1f8a4c">Seen it · observed</span></td></tr>
+</tbody>
+</table>
+</main>
+</body>
+</html>
